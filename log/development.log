@@ -2271,3 +2271,76 @@ Processing by SchoolClassesController#index as HTML
 Completed 200 OK in 307ms (Views: 297.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/school_classes/new" for ::1 at 2019-07-01 14:45:12 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SchoolClassesController#new as HTML
+  Rendering school_classes/new.html.erb within layouts/application
+  Rendered school_classes/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 299ms (Views: 284.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/school_classes/1/edit" for ::1 at 2019-07-01 14:45:20 -0600
+Processing by SchoolClassesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchoolClass Load (0.5ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering school_classes/edit.html.erb within layouts/application
+  Rendered school_classes/edit.html.erb within layouts/application (47.7ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `title' for #<#<Class:0x00007fe66d8ea840>:0x00007fe66a1c0108>):
+    1: <p>School Class Form</p>
+    2: <%= form_for @school_class do |f| %>
+    3: <%= f.label title %><br>
+    4: <%= f.text_field :title %><br>
+    5: 
+    6: <%= f.label :room_number %><br>
+  
+app/views/school_classes/edit.html.erb:3:in `block in _app_views_school_classes_edit_html_erb__4553382965092832554_70313799719600'
+app/views/school_classes/edit.html.erb:2:in `_app_views_school_classes_edit_html_erb__4553382965092832554_70313799719600'
+  Rendering /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.0ms)
+Started GET "/school_classes/1/edit" for ::1 at 2019-07-01 14:45:30 -0600
+Processing by SchoolClassesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchoolClass Load (0.2ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering school_classes/edit.html.erb within layouts/application
+  Rendered school_classes/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/school_classes/1" for ::1 at 2019-07-01 14:45:35 -0600
+Processing by SchoolClassesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cw52L1BqMAcxqGBS5h3qq7uoaBucWumzhzhlBPD0PLQ95/EzQCJgnjaFqddpQyQLkRyRoHovVAuEoDhFuuRSxg==", "school_class"=>{"title"=>"asfasdf", "room_number"=>"435345"}, "commit"=>"Update School class", "id"=>"1"}
+  [1m[36mSchoolClass Load (0.2ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "school_classes" SET "title" = ?, "updated_at" = ? WHERE "school_classes"."id" = ?[0m  [["title", "asfasdf"], ["updated_at", "2019-07-01 20:45:35.973281"], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/school_classes/1
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/school_classes/1" for ::1 at 2019-07-01 14:45:35 -0600
+Processing by SchoolClassesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchoolClass Load (0.2ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering school_classes/show.html.erb within layouts/application
+  Rendered school_classes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/school_classes" for ::1 at 2019-07-01 14:46:28 -0600
+Processing by SchoolClassesController#index as HTML
+  Rendering school_classes/index.html.erb within layouts/application
+  [1m[36mSchoolClass Load (0.5ms)[0m  [1m[34mSELECT "school_classes".* FROM "school_classes"[0m
+  Rendered school_classes/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.5ms)
+
+
