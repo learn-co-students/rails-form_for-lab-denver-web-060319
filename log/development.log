@@ -2262,3 +2262,12 @@ Processing by SchoolClassesController#show as HTML
 Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/school_classes" for ::1 at 2019-07-01 14:42:41 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SchoolClassesController#index as HTML
+  Rendering school_classes/index.html.erb within layouts/application
+  [1m[36mSchoolClass Load (0.1ms)[0m  [1m[34mSELECT "school_classes".* FROM "school_classes"[0m
+  Rendered school_classes/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 307ms (Views: 297.0ms | ActiveRecord: 0.5ms)
+
+
