@@ -1,0 +1,12 @@
+<% if @schoolclass.errors.any?%>
+    <%@schoolclass.errors.full_messages.each do |message|%>
+        <%= message %>
+    <%end%>
+<%end%>
+
+<h1>School Class Form</h1>
+<%= form_for @schoolclass do |f| %>
+    <h3>Title: <%= f.text_field :title %></h3>
+    <h3>Room Number: <%= f.number_field :room_number %></h3>
+  <%= f.submit %>
+<% end %>

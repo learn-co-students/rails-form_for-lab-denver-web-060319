@@ -1,0 +1,12 @@
+<% if @student.errors.any?%>
+    <%@student.errors.full_messages.each do |message|%>
+        <%=message%>
+    <%end%>
+<%end%>
+
+<h1>Student Form</h1>
+<%= form_for @student do |f| %>
+    <h3>First Name: <%= f.text_field :first_name %></h3>
+    <h3>Last Name: <%= f.text_field :last_name %></h3>
+  <%= f.submit %>
+<% end %>
